@@ -46,5 +46,5 @@ var overlayMaps = {
   "Earthquakes": earthquakes
 };
 
-
-// LAYER CONTROL //
+// layer control
+L.control.layers(baseMaps, overlayMaps).addTo(map);
