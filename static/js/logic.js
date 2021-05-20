@@ -1,4 +1,4 @@
-// Background tile layers
+// BACKGROUND TILES //
 
 // grayscale background
 var graymap_background = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token={accessToken}", {
@@ -24,3 +24,27 @@ var map = L.map("mapid", {
   zoom: 5,
   layers: [graymap_background, satellitemap_background, outdoors_background]
 });
+
+
+// MAP LAYERS //
+
+// tectonic plate data layer
+var tectonicplates = new L.LayerGroup();
+// earthquake data layer
+var earthquakes = new L.LayerGroup();
+
+// base layers
+var baseMaps = {
+  Satellite: satellitemap_background,
+  Grayscale: graymap_background,
+  Outdoors: outdoors_background
+};
+
+// overlays 
+var overlayMaps = {
+  "Tectonic Plates": tectonicplates,
+  "Earthquakes": earthquakes
+};
+
+
+// LAYER CONTROL //
